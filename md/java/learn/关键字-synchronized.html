@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>关键字-synchronized | 私人知识图书馆</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="description" content="包含: Java 基础, Java 部分源码, JVM, Spring, Spring Boot, Spring Cloud, 数据库原理, MySQL, ElasticSearch, MongoDB, Docker, k8s, CI&amp;CD, Linux, DevOps, 分布式, 中间件, 开发工具, Git, IDE, 源码阅读，读书笔记, 开源项目...">
+    <meta name="robots" content="all">
+    <meta name="author" content="pdai">
+    <meta name="keywords" content="私人知识图书馆, java体系, java知识体系, java框架,java详解,java学习路线,java spring, java面试, 知识体系, java技术体系, java编程, java编程指南,java开发体系, java开发,java教程,java,java数据结构, 算法, 开发基础">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <link rel="preload" href="/assets/css/0.styles.cb877f3d.css" as="style"><link rel="preload" href="/assets/js/app.c015e375.js" as="script"><link rel="preload" href="/assets/js/5.ea3a467f.js" as="script"><link rel="preload" href="/assets/js/12.2b9fddc3.js" as="script"><link rel="prefetch" href="/assets/js/10.97090540.js"><link rel="prefetch" href="/assets/js/11.3f596b90.js"><link rel="prefetch" href="/assets/js/13.d6271850.js"><link rel="prefetch" href="/assets/js/14.85b42e44.js"><link rel="prefetch" href="/assets/js/15.9c9ef26c.js"><link rel="prefetch" href="/assets/js/16.de77b749.js"><link rel="prefetch" href="/assets/js/17.1a28fe64.js"><link rel="prefetch" href="/assets/js/18.65db727f.js"><link rel="prefetch" href="/assets/js/19.f0cab2cf.js"><link rel="prefetch" href="/assets/js/2.2c55f875.js"><link rel="prefetch" href="/assets/js/20.bc2a1ebe.js"><link rel="prefetch" href="/assets/js/21.9d44366f.js"><link rel="prefetch" href="/assets/js/22.8d7f32d4.js"><link rel="prefetch" href="/assets/js/23.302f98ca.js"><link rel="prefetch" href="/assets/js/24.cebfc8b6.js"><link rel="prefetch" href="/assets/js/25.32e88dc5.js"><link rel="prefetch" href="/assets/js/26.d6cf3bce.js"><link rel="prefetch" href="/assets/js/27.a97d8205.js"><link rel="prefetch" href="/assets/js/28.ae33a8cf.js"><link rel="prefetch" href="/assets/js/29.79c71861.js"><link rel="prefetch" href="/assets/js/3.97962a42.js"><link rel="prefetch" href="/assets/js/30.90aec520.js"><link rel="prefetch" href="/assets/js/31.b0e9667f.js"><link rel="prefetch" href="/assets/js/32.1a06a235.js"><link rel="prefetch" href="/assets/js/33.90c0c365.js"><link rel="prefetch" href="/assets/js/4.1fed06c3.js"><link rel="prefetch" href="/assets/js/6.4c970dc8.js"><link rel="prefetch" href="/assets/js/7.702fcf9c.js"><link rel="prefetch" href="/assets/js/8.15f570fb.js"><link rel="prefetch" href="/assets/js/9.b774803a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.cb877f3d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/favicon.ico" alt="私人知识图书馆" class="logo"> <span class="site-name can-hide">私人知识图书馆</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  概述
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习笔记" class="dropdown-title"><span class="title">学习笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习笔记" class="mobile-dropdown-title"><span class="title">学习笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/md/java/learn/learn-typescript.html" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/ChromeExtensions.html" class="nav-link">
+  ChromeExtensions
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Java
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/md/java/learn/Java8-Stream.html" class="nav-link">
+  Stream
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/Java8-Optional.html" class="nav-link">
+  Optional
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Java高并发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/md/java/learn/Java线程池.html" class="nav-link">
+  Java线程池
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/高并发-知识体系.html" class="nav-link">
+  高并发-知识体系
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/高并发-线程基础.html" class="nav-link">
+  高并发-线程基础
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/高并发-理论基础.html" class="nav-link">
+  高并发-理论基础
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/关键字-synchronized.html" class="nav-link">
+  关键字-synchronized
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/关键字-volatile.html" class="nav-link">
+  关键字-volatile
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/关键字-final.html" class="nav-link">
+  关键字-final
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/高并发-ThreadLocal详解.html" class="nav-link">
+  高并发-ThreadLocal详解
+</a></li></ul></li><li class="dropdown-item"><h4>
+          框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/md/java/learn/Spring笔记.html" class="nav-link">
+  Spring笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/Spring-MVC笔记.html" class="nav-link">
+  SpringMVC笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/Mybatis笔记.html" class="nav-link">
+  Mybatis笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/MybatisPlus笔记.html" class="nav-link">
+  MybatisPlus笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/Spring笔记.html" class="nav-link">
+  SpringBoot笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/Dubbo学习笔记.html" class="nav-link">
+  Dubbo笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/learn-zookeeper.html" class="nav-link">
+  Zookeeper笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/learn-redis.html" class="nav-link">
+  Redis笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/learn-elasticstack.html" class="nav-link">
+  Elasticstack笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JVM
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/md/java/learn/JVM快速入门篇.html" class="nav-link">
+  JVM快速入门篇
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="方法论" class="dropdown-title"><span class="title">方法论</span> <span class="arrow down"></span></button> <button type="button" aria-label="方法论" class="mobile-dropdown-title"><span class="title">方法论</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/md/java/method/设计模式.html" class="nav-link">
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="版本工具" class="dropdown-title"><span class="title">版本工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="版本工具" class="mobile-dropdown-title"><span class="title">版本工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/md/java/tool/Git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/md/java/tool/Maven学习笔记.html" class="nav-link">
+  Maven
+</a></li></ul></div></div><div class="nav-item"><a href="/md/about/about-me.html" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/amzpiper" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  概述
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="学习笔记" class="dropdown-title"><span class="title">学习笔记</span> <span class="arrow down"></span></button> <button type="button" aria-label="学习笔记" class="mobile-dropdown-title"><span class="title">学习笔记</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/md/java/learn/learn-typescript.html" class="nav-link">
+  Typescript
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/ChromeExtensions.html" class="nav-link">
+  ChromeExtensions
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Java
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/md/java/learn/Java8-Stream.html" class="nav-link">
+  Stream
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/Java8-Optional.html" class="nav-link">
+  Optional
+</a></li></ul></li><li class="dropdown-item"><h4>
+          Java高并发
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/md/java/learn/Java线程池.html" class="nav-link">
+  Java线程池
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/高并发-知识体系.html" class="nav-link">
+  高并发-知识体系
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/高并发-线程基础.html" class="nav-link">
+  高并发-线程基础
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/高并发-理论基础.html" class="nav-link">
+  高并发-理论基础
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/关键字-synchronized.html" class="nav-link">
+  关键字-synchronized
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/关键字-volatile.html" class="nav-link">
+  关键字-volatile
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/关键字-final.html" class="nav-link">
+  关键字-final
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/高并发-ThreadLocal详解.html" class="nav-link">
+  高并发-ThreadLocal详解
+</a></li></ul></li><li class="dropdown-item"><h4>
+          框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/md/java/learn/Spring笔记.html" class="nav-link">
+  Spring笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/Spring-MVC笔记.html" class="nav-link">
+  SpringMVC笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/Mybatis笔记.html" class="nav-link">
+  Mybatis笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/MybatisPlus笔记.html" class="nav-link">
+  MybatisPlus笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/Spring笔记.html" class="nav-link">
+  SpringBoot笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/Dubbo学习笔记.html" class="nav-link">
+  Dubbo笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/learn-zookeeper.html" class="nav-link">
+  Zookeeper笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/learn-redis.html" class="nav-link">
+  Redis笔记
+</a></li><li class="dropdown-subitem"><a href="/md/java/learn/learn-elasticstack.html" class="nav-link">
+  Elasticstack笔记
+</a></li></ul></li><li class="dropdown-item"><h4>
+          JVM
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/md/java/learn/JVM快速入门篇.html" class="nav-link">
+  JVM快速入门篇
+</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="方法论" class="dropdown-title"><span class="title">方法论</span> <span class="arrow down"></span></button> <button type="button" aria-label="方法论" class="mobile-dropdown-title"><span class="title">方法论</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/md/java/method/设计模式.html" class="nav-link">
+  设计模式
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="版本工具" class="dropdown-title"><span class="title">版本工具</span> <span class="arrow down"></span></button> <button type="button" aria-label="版本工具" class="mobile-dropdown-title"><span class="title">版本工具</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/md/java/tool/Git.html" class="nav-link">
+  Git
+</a></li><li class="dropdown-item"><!----> <a href="/md/java/tool/Maven学习笔记.html" class="nav-link">
+  Maven
+</a></li></ul></div></div><div class="nav-item"><a href="/md/about/about-me.html" class="nav-link">
+  关于
+</a></div><div class="nav-item"><a href="https://github.com/amzpiper" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>前端</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/md/java/learn/learn-typescript.html" class="sidebar-link">TypeScript</a></li><li><a href="/md/java/learn/ChromeExtensions.html" class="sidebar-link">Chrome Extensions</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>Java</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/md/java/learn/Java8-Stream.html" class="sidebar-link">Java 8 - Stream</a></li><li><a href="/md/java/learn/Java8-Optional.html" class="sidebar-link">Java 8 - Optional</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>Java高并发</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/md/java/learn/Java线程池.html" class="sidebar-link">Java 线程池</a></li><li><a href="/md/java/learn/高并发-知识体系.html" class="sidebar-link">高并发-知识体系</a></li><li><a href="/md/java/learn/高并发-线程基础.html" class="sidebar-link">高并发-线程基础</a></li><li><a href="/md/java/learn/高并发-理论基础.html" class="sidebar-link">高并发-理论基础</a></li><li><a href="/md/java/learn/关键字-synchronized.html" class="active sidebar-link">关键字-synchronized</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#带着bat大厂的面试问题去理解synchronized" class="sidebar-link">带着BAT大厂的面试问题去理解Synchronized</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#synchronized的使用" class="sidebar-link">Synchronized的使用</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#对象锁" class="sidebar-link">对象锁</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#代码块形式-手动指定锁定对象-也可是是this-也可以是自定义的锁" class="sidebar-link">代码块形式：手动指定锁定对象，也可是是this,也可以是自定义的锁</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#方法锁形式-synchronized修饰普通方法-锁对象默认为this" class="sidebar-link">方法锁形式：synchronized修饰普通方法，锁对象默认为this</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#类锁" class="sidebar-link">类锁</a></li></ul></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#synchronized原理分析" class="sidebar-link">Synchronized原理分析</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#加锁和释放锁的原理" class="sidebar-link">加锁和释放锁的原理</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#可重入原理-加锁次数计数器" class="sidebar-link">可重入原理：加锁次数计数器</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#保证可见性的原理-内存模型和happens-before规则" class="sidebar-link">保证可见性的原理：内存模型和happens-before规则</a></li></ul></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#jvm中锁的优化" class="sidebar-link">JVM中锁的优化</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#锁的类型" class="sidebar-link">锁的类型</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#自旋锁与自适应自旋锁" class="sidebar-link">自旋锁与自适应自旋锁</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#锁消除" class="sidebar-link">锁消除</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#锁粗化" class="sidebar-link">锁粗化</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#轻量级锁" class="sidebar-link">轻量级锁</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#偏向锁" class="sidebar-link">偏向锁</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#锁的优缺点对比" class="sidebar-link">锁的优缺点对比</a></li></ul></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#synchronized与lock" class="sidebar-link">Synchronized与Lock</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#synchronized的缺陷" class="sidebar-link">synchronized的缺陷</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#lock解决相应问题" class="sidebar-link">Lock解决相应问题</a></li></ul></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#再深入理解" class="sidebar-link">再深入理解</a></li><li class="sidebar-sub-header"><a href="/md/java/learn/关键字-synchronized.html#参考文章" class="sidebar-link">参考文章</a></li></ul></li><li><a href="/md/java/learn/关键字-volatile.html" class="sidebar-link">关键字-volatile</a></li><li><a href="/md/java/learn/关键字-final.html" class="sidebar-link">关键字-final</a></li><li><a href="/md/java/learn/高并发-ThreadLocal详解.html" class="sidebar-link">高并发 - ThreadLocal详解</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>框架</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/md/java/learn/Spring笔记.html" class="sidebar-link">Spring</a></li><li><a href="/md/java/learn/Spring-MVC笔记.html" class="sidebar-link">SpringMVC</a></li><li><a href="/md/java/learn/Mybatis笔记.html" class="sidebar-link">Mybatis</a></li><li><a href="/md/java/learn/MybatisPlus笔记.html" class="sidebar-link">Mybatis-Plus</a></li><li><a href="/md/java/learn/SpringBoot笔记.html" class="sidebar-link">SpringBoot</a></li><li><a href="/md/java/learn/learn-zookeeper.html" class="sidebar-link">Zookeeper</a></li><li><a href="/md/java/learn/learn-redis.html" class="sidebar-link">Redis</a></li><li><a href="/md/java/learn/learn-elasticstack.html" class="sidebar-link">Elasticstack</a></li><li><a href="/md/java/learn/Dubbo学习笔记.html" class="sidebar-link">Dubbo</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>JVM</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/md/java/learn/JVM快速入门篇.html" class="sidebar-link">JVM快速入门篇</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="关键字-synchronized"><a href="#关键字-synchronized" class="header-anchor">#</a> 关键字-synchronized</h1> <aside>
+💡 在C程序代码中我们可以利用操作系统提供的互斥锁来实现同步块的互斥访问及线程的阻塞及唤醒等工作。在Java中除了提供Lock API外还在语法层面上提供了synchronized关键字来实现互斥同步原语, 本文将对synchronized关键字详细分析。
+</aside> <h2 id="带着bat大厂的面试问题去理解synchronized"><a href="#带着bat大厂的面试问题去理解synchronized" class="header-anchor">#</a> 带着BAT大厂的面试问题去理解Synchronized</h2> <p>请带着这些问题继续后文，会很大程度上帮助你更好的理解synchronized。</p> <ul><li>Synchronized可以<strong>作用</strong>在哪里? 分别通过<strong>对象锁</strong>和<strong>类锁</strong>进行举例。</li> <li>Synchronized本质上是<strong>通过什么保证线程安全</strong>的? 分三个方面回答：<strong>加锁和释放锁的原理</strong>，<strong>可重入原理</strong>，保证<strong>可见性原理</strong>。</li> <li>Synchronized由什么样的<strong>缺陷</strong>? Java <strong>Lock是怎么弥补</strong>这些缺陷的。</li> <li>Synchronized和Lock的<strong>对比</strong>，和选择?</li> <li>Synchronized在使用时有何<strong>注意事项</strong>?</li> <li>Synchronized修饰的方法在<strong>抛出异常时,会释放锁吗</strong>?</li> <li>多个线程等待同一个snchronized锁的时候，JVM如何<strong>选择下一个获取锁的线程</strong>?</li> <li>Synchronized使得同时只有一个线程可以执行，性能比较差，有什么<strong>提升性能的方法</strong>?</li> <li>我<strong>想更加灵活地控制锁的释放和获取</strong>(现在释放锁和获取锁的时机都被规定死了)，怎么办?</li> <li>什么是<strong>锁的升级和降级</strong>? 什么是JVM里的<strong>偏斜锁、轻量级锁、重量级锁</strong>?</li> <li><strong>不同的JDK中对Synchronized有何优化</strong>?</li></ul> <h2 id="synchronized的使用"><a href="#synchronized的使用" class="header-anchor">#</a> Synchronized的使用</h2> <p>在应用Sychronized关键字时需要把握如下注意点：</p> <ul><li>一把锁只能同时被一个线程获取，没有获得锁的线程只能等待；</li> <li>每个实例都对应有自己的一把锁(this),不同实例之间互不影响；例外：锁对象是*.class以及synchronized修饰的是static方法的时候，所有对象公用同一把锁</li> <li>synchronized修饰的方法，无论方法正常执行完毕还是抛出异常，都会释放锁</li></ul> <h3 id="对象锁"><a href="#对象锁" class="header-anchor">#</a> 对象锁</h3> <p>包括方法锁(默认锁对象为this,当前实例对象)和同步代码块锁(自己指定锁对象)</p> <h3 id="代码块形式-手动指定锁定对象-也可是是this-也可以是自定义的锁"><a href="#代码块形式-手动指定锁定对象-也可是是this-也可以是自定义的锁" class="header-anchor">#</a> <strong>代码块形式：手动指定锁定对象，也可是是this,也可以是自定义的锁</strong></h3> <ul><li>示例1</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class SynchronizedObjectLock implements Runnable {
+    static SynchronizedObjectLock instence = new SynchronizedObjectLock();
+
+    @Override
+    public void run() {
+        // 同步代码块形式——锁为this,两个线程使用的锁是一样的,线程1必须要等到线程0释放了该锁后，才能执行
+        synchronized (this) {
+            System.out.println(&quot;我是线程&quot; + Thread.currentThread().getName());
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread().getName() + &quot;结束&quot;);
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(instence);
+        Thread t2 = new Thread(instence);
+        t1.start();
+        t2.start();
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><p>输出结果：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>我是线程Thread-0
+Thread-0结束
+我是线程Thread-1
+Thread-1结束
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>示例2</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class SynchronizedObjectLock implements Runnable {
+    static SynchronizedObjectLock instence = new SynchronizedObjectLock();
+    // 创建2把锁
+    Object block1 = new Object();
+    Object block2 = new Object();
+
+    @Override
+    public void run() {
+        // 这个代码块使用的是第一把锁，当他释放后，后面的代码块由于使用的是第二把锁，因此可以马上执行
+        synchronized (block1) {
+            System.out.println(&quot;block1锁,我是线程&quot; + Thread.currentThread().getName());
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(&quot;block1锁,&quot;+Thread.currentThread().getName() + &quot;结束&quot;);
+        }
+
+        synchronized (block2) {
+            System.out.println(&quot;block2锁,我是线程&quot; + Thread.currentThread().getName());
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(&quot;block2锁,&quot;+Thread.currentThread().getName() + &quot;结束&quot;);
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(instence);
+        Thread t2 = new Thread(instence);
+        t1.start();
+        t2.start();
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p>输出结果：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>block1锁,我是线程Thread-0
+block1锁,Thread-0结束
+block2锁,我是线程Thread-0　　// 可以看到当第一个线程在执行完第一段同步代码块之后，第二个同步代码块可以马上得到执行，因为他们使用的锁不是同一把
+block1锁,我是线程Thread-1
+block2锁,Thread-0结束
+block1锁,Thread-1结束
+block2锁,我是线程Thread-1
+block2锁,Thread-1结束
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="方法锁形式-synchronized修饰普通方法-锁对象默认为this"><a href="#方法锁形式-synchronized修饰普通方法-锁对象默认为this" class="header-anchor">#</a> 方法锁形式：synchronized修饰普通方法，锁对象默认为this</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class SynchronizedObjectLock implements Runnable {
+    static SynchronizedObjectLock instence = new SynchronizedObjectLock();
+
+    @Override
+    public void run() {
+        method();
+    }
+
+    public synchronized void method() {
+        System.out.println(&quot;我是线程&quot; + Thread.currentThread().getName());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName() + &quot;结束&quot;);
+    }
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(instence);
+        Thread t2 = new Thread(instence);
+        t1.start();
+        t2.start();
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>输出结果：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>我是线程Thread-0
+Thread-0结束
+我是线程Thread-1
+Thread-1结束
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="类锁"><a href="#类锁" class="header-anchor">#</a> 类锁</h3> <p>指synchronize修饰静态的方法或指定锁对象为Class对象</p> <p><strong>synchronize修饰静态方法</strong></p> <ul><li>示例1</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class SynchronizedObjectLock implements Runnable {
+    static SynchronizedObjectLock instence1 = new SynchronizedObjectLock();
+    static SynchronizedObjectLock instence2 = new SynchronizedObjectLock();
+
+    @Override
+    public void run() {
+        method();
+    }
+
+    // synchronized用在普通方法上，默认的锁就是this，当前实例
+    public synchronized void method() {
+        System.out.println(&quot;我是线程&quot; + Thread.currentThread().getName());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName() + &quot;结束&quot;);
+    }
+
+    public static void main(String[] args) {
+        // t1和t2对应的this是两个不同的实例，所以代码不会串行
+        Thread t1 = new Thread(instence1);
+        Thread t2 = new Thread(instence2);
+        t1.start();
+        t2.start();
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><p>输出结果：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>我是线程Thread-0
+我是线程Thread-1
+Thread-1结束
+Thread-0结束
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><ul><li>示例2</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class SynchronizedObjectLock implements Runnable {
+    static SynchronizedObjectLock instence1 = new SynchronizedObjectLock();
+    static SynchronizedObjectLock instence2 = new SynchronizedObjectLock();
+
+    @Override
+    public void run() {
+        method();
+    }
+
+    // synchronized用在静态方法上，默认的锁就是当前所在的Class类，所以无论是哪个线程访问它，需要的锁都只有一把
+    public static synchronized void method() {
+        System.out.println(&quot;我是线程&quot; + Thread.currentThread().getName());
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        System.out.println(Thread.currentThread().getName() + &quot;结束&quot;);
+    }
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(instence1);
+        Thread t2 = new Thread(instence2);
+        t1.start();
+        t2.start();
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br></div></div><p>输出结果：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>我是线程Thread-0
+Thread-0结束
+我是线程Thread-1
+Thread-1结束
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><strong>synchronized指定锁对象为Class对象</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class SynchronizedObjectLock implements Runnable {
+    static SynchronizedObjectLock instence1 = new SynchronizedObjectLock();
+    static SynchronizedObjectLock instence2 = new SynchronizedObjectLock();
+
+    @Override
+    public void run() {
+        // 所有线程需要的锁都是同一把
+        synchronized(SynchronizedObjectLock.class){
+            System.out.println(&quot;我是线程&quot; + Thread.currentThread().getName());
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println(Thread.currentThread().getName() + &quot;结束&quot;);
+        }
+    }
+
+    public static void main(String[] args) {
+        Thread t1 = new Thread(instence1);
+        Thread t2 = new Thread(instence2);
+        t1.start();
+        t2.start();
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><p>输出结果：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code>我是线程<span class="token class-name">Thread</span><span class="token operator">-</span><span class="token number">0</span>
+<span class="token class-name">Thread</span><span class="token operator">-</span><span class="token number">0</span>结束
+我是线程<span class="token class-name">Thread</span><span class="token operator">-</span><span class="token number">1</span>
+<span class="token class-name">Thread</span><span class="token operator">-</span><span class="token number">1</span>结束
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h2 id="synchronized原理分析"><a href="#synchronized原理分析" class="header-anchor">#</a> Synchronized原理分析</h2> <h3 id="加锁和释放锁的原理"><a href="#加锁和释放锁的原理" class="header-anchor">#</a> 加锁和释放锁的原理</h3> <blockquote><p>现象、时机(内置锁this)、深入JVM看字节码(反编译看monitor指令)</p></blockquote> <p>深入JVM看字节码，创建如下的代码：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>public class SynchronizedDemo2 {
+
+    Object object = new Object();
+    public void method1() {
+        synchronized (object) {
+
+        }
+        method2();
+    }
+
+    private static void method2() {
+
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>使用javac命令进行编译生成.class文件</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;javac SynchronizedDemo2.java
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>使用javap命令反编译查看.class文件的信息</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&gt;javap -verbose SynchronizedDemo2.class
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>得到如下的信息：</p> <p><img src="/assets/img/Untitled.fb026cc5.png" alt="Untitled"></p> <p>关注红色方框里的<code>monitorenter</code>和<code>monitorexit</code>即可。</p> <p><code>Monitorenter</code>和<code>Monitorexit</code>指令，会让对象在执行，使其锁计数器加1或者减1。每一个对象在同一时间只与一个monitor(锁)相关联，而一个monitor在同一时间只能被一个线程获得，一个对象在尝试获得与这个对象相关联的Monitor锁的所有权的时候，monitorenter指令会发生如下3中情况之一：</p> <ul><li>monitor计数器为0，意味着目前还没有被获得，那这个线程就会立刻获得然后把锁计数器+1，一旦+1，别的线程再想获取，就需要等待</li> <li>如果这个monitor已经拿到了这个锁的所有权，又重入了这把锁，那锁计数器就会累加，变成2，并且随着重入的次数，会一直累加</li> <li>这把锁已经被别的线程获取了，等待锁释放</li></ul> <p><code>monitorexit指令</code>：释放对于monitor的所有权，释放过程很简单，就是讲monitor的计数器减1，如果减完以后，计数器不是0，则代表刚才是重入进来的，当前线程还继续持有这把锁的所有权，如果计数器变成0，则代表当前线程不再拥有该monitor的所有权，即释放锁。</p> <p>下图表现了对象，对象监视器，同步队列以及执行线程状态之间的关系：</p> <p><img src="/assets/img/Untitled1.03c87c18.png" alt="Untitled"></p> <p>该图可以看出，任意线程对Object的访问，首先要获得Object的监视器，如果获取失败，该线程就进入同步状态，线程状态变为BLOCKED，当Object的监视器占有者释放后，在同步队列中得线程就会有机会重新获取该监视器。</p> <h3 id="可重入原理-加锁次数计数器"><a href="#可重入原理-加锁次数计数器" class="header-anchor">#</a> <strong>可重入原理：加锁次数计数器</strong></h3> <p>上面的demo中在执行完同步代码块<code>method1</code>之后紧接着再会去执行一个静态同步方法<code>method2</code>，而这个方法锁的对象依然就这个类对象，那么这个正在执行的线程还需要获取该锁吗? 答案是不必的，从上图中就可以看出来，执行静态同步方法的时候就只有一条monitorexit指令，并没有monitorenter获取锁的指令。这就是锁的重入性，即在同一锁程中，线程不需要再次获取同一把锁。</p> <p>Synchronized先天具有重入性。每个对象拥有一个计数器，当线程获取该对象锁后，计数器就会加一，释放锁后就会将计数器减一。</p> <h3 id="保证可见性的原理-内存模型和happens-before规则"><a href="#保证可见性的原理-内存模型和happens-before规则" class="header-anchor">#</a> 保证可见性的原理：内存模型和happens-before规则</h3> <p>Synchronized的<code>happens-before</code>规则，即监视器锁规则：对同一个监视器的<strong>解锁</strong>，<code>happens-before</code><strong>于</strong>对该监视器的<strong>加锁</strong>。继续来看代码：</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MonitorDemo</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> a <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">writer</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>     <span class="token comment">// 1</span>
+        a<span class="token operator">++</span><span class="token punctuation">;</span>                                <span class="token comment">// 2</span>
+    <span class="token punctuation">}</span>                                       <span class="token comment">// 3</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">reader</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>    <span class="token comment">// 4</span>
+        <span class="token keyword">int</span> i <span class="token operator">=</span> a<span class="token punctuation">;</span>                         <span class="token comment">// 5</span>
+    <span class="token punctuation">}</span>                                      <span class="token comment">// 6</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>该代码的happens-before关系如图所示：</p> <p><img src="/assets/img/Untitled2.6363ea8d.png" alt="Untitled"></p> <p>在图中每一个箭头连接的<strong>两个节点就代表之间的happens-before关系</strong>，<strong>黑色的是通过程序顺序规则推导出来</strong>，<strong>红色的为监视器锁规则推导而出</strong>：<strong>线程A释放锁(解锁)happens-before线程B加锁</strong>，蓝色的则是通过程序顺序规则和监视器锁规则推测出来happens-before关系，通过传递性规则进一步推导的happens-before关系。现在我们来重点关注2 happens-before 5，通过这个关系我们可以得出什么?</p> <p>根据happens-before的定义中的一条:<strong>如果A happens-before B，则A的执行结果对B可见，并且A的执行顺序先于B</strong>。线程A先对共享变量A进行加一，<strong>由2 happens-before 5关系可知线程A的执行结果对线程B可见即线程B所读取到的a的值为1</strong>。</p> <h2 id="jvm中锁的优化"><a href="#jvm中锁的优化" class="header-anchor">#</a> JVM中锁的优化</h2> <p>简单来说在JVM中monitorenter和monitorexit字节码依赖于底层的操作系统的Mutex Lock来实现的，但是由于使用Mutex Lock需要将当前线程挂起并从用户态切换到内核态来执行，这种切换的代价是非常昂贵的；然而在现实中的大部分情况下，同步方法是运行在单线程环境(无锁竞争环境)如果每次都调用Mutex Lock那么将严重的影响程序的性能。<strong>不过在jdk1.6中对锁的实现引入了大量的优化，如锁粗化(Lock Coarsening)、锁消除(Lock Elimination)、轻量级锁(Lightweight Locking)、偏向锁(Biased Locking)、适应性自旋(Adaptive Spinning)等技术来减少锁操作的开销</strong>。</p> <ul><li><code>锁粗化(Lock Coarsening)</code>：也就是减少不必要的紧连在一起的unlock，lock操作，将多个连续的锁<strong>扩展成一个范围更大的锁</strong>。</li> <li><code>锁消除(Lock Elimination)</code>：通过运行时JIT编译器的逃逸分析来<strong>消除一些没有在当前同步块以外被其他线程共享的数据的锁</strong>保护，通过逃逸分析也可以在线程本地Stack上进行对象空间的分配(同时还可以减少Heap上的垃圾收集开销)。</li> <li><code>轻量级锁(Lightweight Locking)</code>：这种锁实现的背后<strong>基于这样一种假设</strong>，即在真实的情况下我们程序中的<strong>大部分同步代码一般都处于无锁竞争状态</strong>(即单线程执行环境)，<strong>在无锁竞争的情况下完全可以避免调用操作系统层面的重量级互斥锁</strong>，<strong>取而代之</strong>的<strong>是在monitorenter和monitorexit中只需要依靠一条CAS原子指令就可以完成锁的获取及释放</strong>。当<strong>存在锁竞争的情况下，执行CAS指令失败的线程将调用操作系统互斥锁</strong>进入到阻塞状态，当<strong>锁被释放的时候被唤醒</strong>(具体处理步骤下面详细讨论)。</li> <li><code>偏向锁(Biased Locking)</code>：是为了在无锁竞争的情况下<strong>避免在锁获取过程中执行不必要的CAS原子指令</strong>，因为<strong>CAS原子指令</strong>虽然相对于重量级锁来说开销比较小<strong>但还是存在非常可观的本地延迟</strong>。</li> <li><code>适应性自旋(Adaptive Spinning)</code>：当线程在<strong>获取轻量级锁的过程中执行CAS操作失败时</strong>，在<strong>进入</strong>与monitor相关联的<strong>操作系统重量级锁</strong>(mutex semaphore)<strong>前会进入忙等待</strong>(Spinning)然后<strong>再次尝试</strong>，当<strong>尝试一定的次数后如果仍然没有成功则调用与该monitor关联的semaphore(即互斥锁)进入到阻塞状态</strong>。</li></ul> <blockquote><p>下面来详细讲解下，先从Synchronied同步锁开始讲起：</p></blockquote> <h3 id="锁的类型"><a href="#锁的类型" class="header-anchor">#</a> <strong>锁的类型</strong></h3> <p>在Java SE 1.6里Synchronied同步锁，一共有四种状态：<code>无锁</code>、<code>偏向锁</code>、<code>轻量级所</code>、<code>重量级锁</code>，它会随着竞争情况逐渐升级。锁可以升级但是不可以降级，目的是为了提供获取锁和释放锁的效率。</p> <blockquote><p>锁膨胀方向： 无锁 → 偏向锁 → 轻量级锁 → 重量级锁 (此过程是不可逆的)</p></blockquote> <h3 id="自旋锁与自适应自旋锁"><a href="#自旋锁与自适应自旋锁" class="header-anchor">#</a> 自旋锁与自适应自旋锁</h3> <p><strong>自旋锁</strong></p> <blockquote><p>引入背景：大家都知道，在没有加入锁优化时，Synchronized是一个非常“胖大”的家伙。在多线程竞争锁时，当一个线程获取锁时，它会阻塞所有正在竞争的线程，这样对性能带来了极大的影响。在挂起线程和恢复线程的操作都需要转入内核态中完成，这些操作对系统的并发性能带来了很大的压力。同时HotSpot团队注意到在很多情况下，共享数据的锁定状态只会持续很短的一段时间，为了这段时间去挂起和回复阻塞线程并不值得。在如今多处理器环境下，完全可以让另一个没有获取到锁的线程在门外等待一会(自旋)，但不放弃CPU的执行时间。等待持有锁的线程是否很快就会释放锁。为了让线程等待，我们只需要让线程执行一个忙循环(自旋)，这便是自旋锁由来的原因。</p></blockquote> <p>自旋锁早在JDK1.4 中就引入了，只是当时默认时关闭的。在JDK 1.6后默认为开启状态。自旋锁本质上与阻塞并不相同，先不考虑其对多处理器的要求，如果锁占用的时间非常的短，那么自旋锁的性能会非常的好，相反，其会带来更多的性能开销(因为在线程自旋时，始终会占用CPU的时间片，如果锁占用的时间太长，那么自旋的线程会白白消耗掉CPU资源)。因此自旋等待的时间必须要有一定的限度，如果<strong>自旋超过了限定的次数仍然没有成功获取到锁，就应该使用传统的方式去挂起线程</strong>了，在JDK定义中，<strong>自旋锁默认的自旋次数为10次，用户可以使用参数<code>-XX:PreBlockSpin</code>来更改</strong>。</p> <p>可是现在又出现了一个问题：<strong>如果线程锁在线程自旋刚结束就释放掉了锁，那么是不是有点得不偿失</strong>。所以这时候我们<strong>需要更加聪明的锁</strong>来实现更加灵活的自旋。来提高并发的性能。(这里则需要自适应自旋锁！)</p> <p><strong>自适应自旋锁</strong></p> <p>在JDK 1.6中引入了自适应自旋锁。这就意味着自旋的时间不再固定了，而是由前一次在同一个锁上的自旋 时间及锁的拥有者的状态来决定的。如果在同一个锁对象上，自旋等待刚刚成功获取过锁，并且持有锁的线程正在运行中，那么JVM会认为该锁自旋获取到锁的可能性很大，会自动增加等待时间。比如增加到100此循环。相反，如果对于某个锁，自旋很少成功获取锁。那再以后要获取这个锁时将可能省略掉自旋过程，以避免浪费处理器资源。有了自适应自旋，JVM对程序的锁的状态预测会越来越准确，JVM也会越来越聪明。</p> <h3 id="锁消除"><a href="#锁消除" class="header-anchor">#</a> 锁消除</h3> <p>锁消除是指虚拟机即时编译器再运行时，对一些代码上要求同步，但是被检测到不可能存在共享数据竞争的锁进行消除。锁消除的主要判定依据来源于逃逸分析的数据支持。意思就是：JVM会判断再一段程序中的同步明显不会逃逸出去从而被其他线程访问到，那JVM就把它们当作栈上数据对待，认为这些数据时线程独有的，不需要加同步。此时就会进行锁消除。</p> <p>当然在实际开发中，我们很清楚的知道那些地方时线程独有的，不需要加同步锁，但是在Java API中有很多方法都是加了同步的，那么此时JVM会判断这段代码是否需要加锁。如果数据并不会逃逸，则会进行锁消除。比如如下操作：在操作String类型数据时，由于String是一个不可变类，对字符串的连接操作总是通过生成的新的String对象来进行的。因此Javac编译器会对String连接做自动优化。在JDK 1.5之前会使用StringBuffer对象的连续append()操作，在JDK 1.5及以后的版本中，会转化为StringBuidler对象的连续append()操作。</p> <div class="language-java line-numbers-mode"><pre class="language-java"><code><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token class-name">String</span> <span class="token function">test03</span><span class="token punctuation">(</span><span class="token class-name">String</span> s1<span class="token punctuation">,</span> <span class="token class-name">String</span> s2<span class="token punctuation">,</span> <span class="token class-name">String</span> s3<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">String</span> s <span class="token operator">=</span> s1 <span class="token operator">+</span> s2 <span class="token operator">+</span> s3<span class="token punctuation">;</span>
+    <span class="token keyword">return</span> s<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p>上述代码使用javap编译结果：</p> <p><img src="/assets/img/Untitled3.d3f35838.png" alt="Untitled"></p> <p>众所周知，StringBuilder不是安全同步的，但是在上述代码中，JVM判断该段代码并不会逃逸，则将该代码带默认为线程独有的资源，并不需要同步，所以执行了锁消除操作。(还有Vector中的各种操作也可实现锁消除。在没有逃逸出数据安全防卫内)</p> <h3 id="锁粗化"><a href="#锁粗化" class="header-anchor">#</a> 锁粗化</h3> <p>原则上，我们都知道<strong>在加同步锁时，尽可能的将同步块的作用范围限制到尽量小的范围</strong>(只<strong>在共享数据的实际作用域中才进行同步</strong>，这样是为了<strong>使得需要同步的操作数量尽可能变小</strong>。在存在锁同步竞争中，也可以<strong>使得等待锁的线程尽早的拿到锁</strong>)。</p> <p>大部分上述情况是完美正确的，但是<strong>如果存在连串的一系列操作都对同一个对象反复加锁和解锁</strong>，<strong>甚至加锁操作时出现在循环体中的</strong>，那即使没有线程竞争，频繁地进行互斥同步操作也会导致不必要地性能操作。</p> <p>这里贴上根据上述Javap 编译地情况编写地实例java类</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>public static String test04(String s1, String s2, String s3) {
+    StringBuilder sb = new StringBuilder();
+    sb.append(s1);
+    sb.append(s2);
+    sb.append(s3);
+    return sb.toString();
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>在上述地<strong>连续append()操作中就属于这类情况</strong>。JVM会检测到这样一连串地操作都是对同一个对象加锁，那么<strong>JVM会将加锁同步地范围扩展(粗化)到整个一系列操作的外部</strong>，使整个一连串地append()操作<strong>只需要加锁一次</strong>就可以了。</p> <h3 id="轻量级锁"><a href="#轻量级锁" class="header-anchor">#</a> 轻量级锁</h3> <p>在JDK 1.6之后引入的轻量级锁，需要注意的是轻量级锁并不是替代重量级锁的，而是对在大多数情况下同步块并不会有竞争出现提出的一种优化。它可以减少重量级锁对线程的阻塞带来地线程开销。从而提高并发性能。</p> <p>如果要理解轻量级锁，那么必须先要了解HotSpot虚拟机中对象头地内存布局。上面介绍Java对象头也详细介绍过。在对象头中(<code>Object Header</code>)存在两部分。第一部分用于存储对象自身的运行时数据，<code>HashCode</code>、<code>GC Age</code>、<code>锁标记位</code>、<code>是否为偏向锁</code>。等。一般为32位或者64位(视操作系统位数定)。官方称之为<code>Mark Word</code>，它是实现轻量级锁和偏向锁的关键。 另外一部分存储的是指向方法区对象类型数据的指针(<code>Klass Point</code>)，如果对象是数组的话，还会有一个额外的部分用于存储数据的长度。</p> <p><strong>轻量级锁加锁</strong></p> <p>在线程执行同步块之前，JVM会先在当前线程的栈帧中创建一个名为锁记录(<code>Lock Record</code>)的空间，用于存储锁对象目前的<code>Mark Word</code>的拷贝（JVM会将对象头中的<code>Mark Word</code>拷贝到锁记录中，官方称为<code>Displaced Mark Ward</code>），这个时候线程堆栈与对象头的状态如图：</p> <p><img src="/assets/img/Untitled4.8b6a0b98.png" alt="Untitled"></p> <p>如上图所示：如果当前对象<strong>没有被锁定</strong>，那么锁标志位位<strong>01</strong>状态，JVM在执行当前线程时，首先会在当前线程栈帧中<strong>创建锁记录<code>Lock Record</code>的空间用于存储锁对象目前的<code>Mark Word</code>的拷贝</strong>。</p> <p>然后，虚拟机<strong>使用CAS操作将标记字段Mark Word拷贝到锁记录中</strong>，并且<strong>将<code>Mark Word</code>更新为指向<code>Lock Record</code>的指针</strong>。如果更新<strong>成功了</strong>，那么这个<strong>线程就有用了该对象的锁</strong>，并且对象<strong>Mark Word的锁标志位更新为</strong>(<code>Mark Word</code>中最后的2bit) <strong>00</strong>，即<strong>表示此对象处于轻量级锁定状态</strong>，如图：</p> <p><img src="/assets/img/Untitled5.090547be.png" alt="Untitled"></p> <p>如果这个更新操作失败，JVM会检查当前的<code>**Mark Word</code>中是否存在指向当前线程的栈帧的指针，如果有，说明该锁已经被获取**，可以直接调用。如果<strong>没有，则说明该锁被其他线程抢占</strong>了，如果有<strong>两条以上的线程竞争同一个锁，那轻量级锁就不再有效，直接膨胀为重量级锁</strong>，没有获得锁的线程会被阻塞。此时，锁的标志位为<code>10</code>，<code>Mark Word</code>中存储的是指向重量级锁的指针。</p> <p>轻量级<strong>解锁时</strong>，会<strong>使用原子的CAS操作将<code>Displaced Mark Word</code>替换回到对象头</strong>中，如果<strong>成功，则表示没有发生竞争关系</strong>。如果<strong>失败，表示当前锁存在竞争关系</strong>。锁就会<strong>膨胀成重量级锁</strong>。两个线程同时争夺锁，导致锁膨胀的流程图如下：</p> <p><img src="/assets/img/Untitled6.219a7767.png" alt="Untitled"></p> <h3 id="偏向锁"><a href="#偏向锁" class="header-anchor">#</a> 偏向锁</h3> <blockquote><p>引入背景：在大多实际环境下，锁不仅不存在多线程竞争，而且总是由同一个线程多次获取，那么在同一个线程反复获取所释放锁中，其中并还没有锁的竞争，那么这样看上去，多次的获取锁和释放锁带来了很多不必要的性能开销和上下文切换。</p></blockquote> <p>为了解决这一问题，HotSpot的作者在Java SE 1.6 中对Synchronized进行了优化，引入了偏向锁。当一个线程访问同步快并获取锁时，会在对象头和栈帧中的锁记录里存储锁偏向的线程ID，以后该线程在进入和推出同步块时不需要进行CAS操作来加锁和解锁。只需要简单地测试一下对象头的<code>Mark Word</code>里是否存储着指向当前线程的偏向锁。如果成功，表示线程已经获取到了锁。</p> <p><img src="/assets/img/Untitled7.b88b9970.png" alt="Untitled"></p> <p><strong>偏向锁的撤销</strong></p> <p>偏向锁使用了一种等待竞争出现才会释放锁的机制。所以当其他线程尝试获取偏向锁时，持有偏向锁的线程才会释放锁。但是偏向锁的撤销需要等到全局安全点(就是当前线程没有正在执行的字节码)。它会首先暂停拥有偏向锁的线程，让你后检查持有偏向锁的线程是否活着。如果线程不处于活动状态，直接将对象头设置为无锁状态。如果线程活着，JVM会遍历栈帧中的锁记录，栈帧中的锁记录和对象头要么偏向于其他线程，要么恢复到无锁状态或者标记对象不适合作为偏向锁。</p> <p><img src="/assets/img/Untitled8.a90d148b.png" alt="Untitled"></p> <h3 id="锁的优缺点对比"><a href="#锁的优缺点对比" class="header-anchor">#</a> 锁的优缺点对比</h3> <p><a href="https://www.notion.so/fdd75b3f1c524aadbc4059e3edf9a30d" target="_blank" rel="noopener noreferrer">Untitled<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h2 id="synchronized与lock"><a href="#synchronized与lock" class="header-anchor">#</a> Synchronized与Lock</h2> <h3 id="synchronized的缺陷"><a href="#synchronized的缺陷" class="header-anchor">#</a> synchronized的缺陷</h3> <ul><li><code>效率低</code>：锁的释放情况少，只有代码执行完毕或者异常结束才会释放锁；试图获取锁的时候不能设定超时，不能中断一个正在使用锁的线程，相对而言，Lock可以中断和设置超时</li> <li><code>不够灵活</code>：加锁和释放的时机单一，每个锁仅有一个单一的条件(某个对象)，相对而言，读写锁更加灵活</li> <li><code>无法知道是否成功获得锁</code>，相对而言，Lock可以拿到状态，如果成功获取锁，....，如果获取失败，.....</li></ul> <h3 id="lock解决相应问题"><a href="#lock解决相应问题" class="header-anchor">#</a> Lock解决相应问题</h3> <p>Lock类这里不做过多解释，主要看里面的4个方法:</p> <ul><li><code>lock()</code>: 加锁</li> <li><code>unlock()</code>: 解锁</li> <li><code>tryLock()</code>: 尝试获取锁，返回一个boolean值</li> <li><code>tryLock(long,TimeUtil)</code>: 尝试获取锁，可以设置超时</li></ul> <p>Synchronized只有锁只与一个条件(是否获取锁)相关联，不灵活，后来<code>Condition与Lock的结合</code>解决了这个问题。</p> <p><strong>多线程竞争一个锁时，其余未得到锁的线程只能不停的尝试获得锁，而不能中断。高并发的情况下会导致性能下降</strong>。ReentrantLock的lockInterruptibly()方法可以优先考虑响应中断。 一个线程等待时间过长，它可以中断自己，然后ReentrantLock响应这个中断，不再让这个线程继续等待。有了这个机制，使用ReentrantLock时就不会像synchronized那样产生死锁了。</p> <blockquote><p><code>ReentrantLock</code>为常用类，它是一个<strong>可重入的互斥锁 Lock</strong>，它具有与使用 synchronized 方法和语句所访问的隐式监视器锁相同的一些基本行为和语义，但功能更强大。详细分析请看: <a href="https://www.pdai.tech/md/java/thread/java-thread-x-lock-ReentrantLock.html" target="_blank" rel="noopener noreferrer">JUC锁: ReentrantLock详解<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p></blockquote> <h2 id="再深入理解"><a href="#再深入理解" class="header-anchor">#</a> <strong>再深入理解</strong></h2> <p>synchronized是通过软件(JVM)实现的，简单易用，即使在JDK5之后有了Lock，仍然被广泛地使用。</p> <ul><li><strong>使用Synchronized有哪些要注意的？</strong> <ul><li><strong>锁对象不能为空</strong>，因为锁的信息都保存在对象头里</li> <li><strong>作用域不宜过大</strong>，影响程序执行的速度，控制范围过大，编写代码也容易出错</li> <li><strong>避免死锁</strong></li> <li>在<strong>能选择的情况下，既不要用Lock也不要用synchronized关键字，用java.util.concurrent包中的各种各样的类</strong>，如果不用该包下的类，在满足业务的情况下，可以使用synchronized关键，因为代码量少，避免出错</li></ul></li> <li><strong>synchronized是公平锁吗？</strong></li></ul> <p>synchronized实际上是<strong>非公平的</strong>，新来的线程有可能立即获得监视器，而在等待区中等候已久的线程可能再次等待，这样有利于提高性能，但是也可能会导致饥饿现象。</p> <h2 id="参考文章"><a href="#参考文章" class="header-anchor">#</a> 参考文章</h2> <p>+《深入理解Java虚拟机》
++《Java并发编程的艺术》</p> <ul><li>https://juejin.im/post/5ae6dc04f265da0ba351d3ff</li> <li>https://www.cnblogs.com/javaminer/p/3889023.html</li> <li>https://www.jianshu.com/p/dab7745c0954</li> <li>https://www.cnblogs.com/wuchaodzxx/p/6867546.html</li> <li>https://www.cnblogs.com/xyabk/p/10901291.html</li> <li>https://www.jianshu.com/p/64240319ed60</li></ul></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/1/16 下午5:40:28</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/md/java/learn/高并发-理论基础.html" class="prev">
+        高并发-理论基础
+      </a></span> <span class="next"><a href="/md/java/learn/关键字-volatile.html">
+        关键字-volatile
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.c015e375.js" defer></script><script src="/assets/js/5.ea3a467f.js" defer></script><script src="/assets/js/12.2b9fddc3.js" defer></script>
+  </body>
+</html>
